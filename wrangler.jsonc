@@ -15,5 +15,17 @@
       "migrations_dir": "migrations"
     }
   ],
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // Staging: Jede Vorschau (Zweig/PR) nutzt die eigene D1 tasto-vorschau, nie die Live-Daten.
+  // Migrationen dafür: wrangler.preview-migrations.jsonc (läuft in cf:preview).
+  "previews": {
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_name": "tasto-vorschau",
+        "database_id": "ee44c05e-18a4-4bb3-8f9f-45a2ad9e03f0"
+      }
+    ],
+    "observability": { "enabled": true }
+  }
 }

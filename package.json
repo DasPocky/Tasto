@@ -14,7 +14,8 @@
     "check": "npm run lint && npm run build",
     "cf:build": "npm run check",
     "cf:deploy": "npm run db:migrate:remote && wrangler deploy",
-    "cf:preview": "wrangler d1 migrations list tasto --remote && wrangler versions upload"
+    "cf:preview": "npm run db:migrate:preview && wrangler preview",
+    "db:migrate:preview": "wrangler d1 migrations apply tasto-vorschau --remote --config wrangler.preview-migrations.jsonc"
   },
   "dependencies": {
     "@fontsource-variable/ibm-plex-sans": "^5.3.0",

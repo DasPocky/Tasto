@@ -1,0 +1,15 @@
+// Nur für die Migrationen der Staging-Datenbank tasto-vorschau (npm run cf:preview).
+// Wird nie deployt.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tasto-vorschau-migrationen",
+  "account_id": "ef9cbceacd8be6cff839033e54c0cb6b",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tasto-vorschau",
+      "database_id": "ee44c05e-18a4-4bb3-8f9f-45a2ad9e03f0",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
