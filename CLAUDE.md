@@ -1,9 +1,7 @@
 # Hinweise für Claude
 
 Tasto ist ein Tipptrainer für das 10-Finger-System (React + Cloudflare
-Worker + D1). Überblick: `README.md`, Ausbau: `PLAN.md`, Betrieb:
-`docs/betrieb.md`. Gesamtplan aller EndLab-Apps: `docs/endlab-umbau.md` im
-Repo EndLab-Start.
+Worker + D1). Überblick: `README.md`, Betrieb: `docs/betrieb.md`.
 
 ## Zusammenarbeit (gilt in allen EndLab-Repos)
 
@@ -17,6 +15,8 @@ Repo EndLab-Start.
 - Deploy nur über **Cloudflare Workers Builds**, nie von Hand und nie aus
   GitHub Actions. GitHub Actions prüfen nur.
 - Nichts darf hängen bleiben: Jede Änderung am Betrieb hat einen Rückweg.
+- **Keine Ideen, Konzepte oder Pläne im Repo.** Ins Repo kommt nur, was gebaut
+  ist und gilt: Code, Tests, Betriebsdoku, CLAUDE.md. Vorschläge nur im Chat.
 
 ## Arbeiten im Repo
 
