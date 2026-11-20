@@ -11,7 +11,7 @@
   --navy: #0e2240;
   --ice: #3fb6d8;
   --ice-soft: #a9e3f2;
-  --ice-press: #1f86a6;
+  --ice-press: #135d77;
   --edge: #d5e5f0;
   --head-from: #0e2240;
   --head-to: #0e2240;
@@ -22,8 +22,9 @@
   --card-foreground: #0e2240;
   --popover: #ffffff;
   --popover-foreground: #0e2240;
-  --primary: #3fb6d8;
-  --primary-foreground: #0e2240;
+  /* Hauptfarbe hell: tieferes Eisblau, damit auch Text und Links gut lesbar sind (Kontrast über 4,5:1) */
+  --primary: #1d7fa0;
+  --primary-foreground: #ffffff;
   --secondary: #dcebf4;
   --secondary-foreground: #0e2240;
   --muted: #e3edf5;
