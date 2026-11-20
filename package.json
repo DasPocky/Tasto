@@ -18,7 +18,6 @@
     "db:migrate:preview": "wrangler d1 migrations apply tasto-vorschau --remote --config wrangler.preview-migrations.jsonc"
   },
   "dependencies": {
-    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
     "@fontsource/ibm-plex-mono": "^5.3.0",
     "@tailwindcss/vite": "^4.3.3",
     "class-variance-authority": "^0.7.1",
