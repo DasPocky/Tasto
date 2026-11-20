@@ -26,7 +26,7 @@ export default function App() {
 function Layout() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="endlab-head">
+      <header className="endlab-head pt-[env(safe-area-inset-top)] pr-[env(safe-area-inset-right)] pl-[env(safe-area-inset-left)]">
         <span className="endlab-bubble" style={{ width: 160, height: 160, right: -40, top: -70 }} />
         <span className="endlab-bubble" style={{ width: 44, height: 44, left: "42%", top: -14 }} />
         <div className="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-5 sm:px-8">
@@ -41,7 +41,7 @@ function Layout() {
       <div className="flex-1">
         <Outlet />
       </div>
-      <footer className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-5 py-6 text-xs text-muted-foreground sm:px-8">
+      <footer className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 px-5 pt-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-xs text-muted-foreground sm:px-8">
         <span>tasto – Tipptrainer für das 10-Finger-System</span>
         <span className="endlab-footer">
           <span className="endlab-logo" aria-hidden />
