@@ -1,7 +1,7 @@
 # Tasto
 
 Tipptrainer für das 10-Finger-System im Browser – adaptives Training, Tipp-Test und Bestenliste.
-Läuft auf Cloudflare Workers unter `endlab.de/tasto`.
+Läuft auf Cloudflare Workers unter `tasto.endlab.de`.
 
 ## Entwicklung
 

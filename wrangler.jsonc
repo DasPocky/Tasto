@@ -4,9 +4,13 @@
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "account_id": "ef9cbceacd8be6cff839033e54c0cb6b",
-  // Läuft unter endlab.de/tasto – die Route greift vor dem Worker auf der Hauptdomain
-  "routes": [{ "pattern": "endlab.de/tasto*", "zone_name": "endlab.de" }],
-  "workers_dev": true,
+  // Eigene Unterdomain. Die alte Route endlab.de/tasto* bleibt und leitet dauerhaft dorthin um.
+  "routes": [
+    { "pattern": "tasto.endlab.de", "custom_domain": true },
+    { "pattern": "endlab.de/tasto*", "zone_name": "endlab.de" }
+  ],
+  "workers_dev": false,
+  "preview_urls": true,
   "d1_databases": [
     {
       "binding": "DB",

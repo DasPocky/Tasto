@@ -4,8 +4,8 @@
 
 | Adresse | Stand |
 |---|---|
-| endlab.de/tasto | heute, Route `endlab.de/tasto*` |
-| tasto.endlab.de | Ziel, Umzug folgt |
+| tasto.endlab.de | Live, eigene Domain am Worker `tasto` |
+| endlab.de/tasto | leitet dauerhaft (301) auf tasto.endlab.de um, Route `endlab.de/tasto*` |
 
 ## Cloudflare
 
@@ -13,6 +13,7 @@
 - D1 `tasto` (Binding `DB`) für Live, D1 `tasto-vorschau` für Staging.
   Migrationen für beide in `migrations/`.
 - Keine Worker-Secrets.
+- `workers_dev` ist aus, `preview_urls` an.
 
 ## Stufen
 

@@ -12,7 +12,9 @@ import { computeStats, countFixed, replay, type KeyEvent } from '../src/lib/typi
 import { PseudoWordGenerator, createRng } from '../src/lib/words'
 import { ASSETS, type EmbeddedAsset } from './assets.gen'
 
-const BASE_PATH = '/tasto'
+/** Frühere Adresse endlab.de/tasto – leitet dauerhaft auf die eigene Unterdomain um */
+const OLD_PATH = '/tasto'
+const HOME = 'https://tasto.endlab.de'
 
 interface Env {
   DB: D1Database
@@ -27,7 +29,7 @@ const MAX_WPM = 250
 
 const generator = new PseudoWordGenerator()
 
-const api = new Hono<{ Bindings: Env }>().basePath(`${BASE_PATH}/api`)
+const api = new Hono<{ Bindings: Env }>().basePath('/api')
 
 const ok = <T>(data: T): ApiResponse<T> => ({ data })
 const fail = (error: string): ApiError => ({ error })
@@ -107,12 +109,14 @@ api.onError((err, c) => {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url)
-    if (url.pathname.startsWith(`${BASE_PATH}/api/`)) return api.fetch(request, env, ctx)
-    if (url.pathname === BASE_PATH) return Response.redirect(`${url.origin}${BASE_PATH}/`, 301)
+    if (url.hostname === 'endlab.de' && (url.pathname === OLD_PATH || url.pathname.startsWith(`${OLD_PATH}/`))) {
+      return Response.redirect(`${HOME}${url.pathname.slice(OLD_PATH.length) || '/'}${url.search}`, 301)
+    }
+    if (url.pathname.startsWith('/api/')) return api.fetch(request, env, ctx)
     if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method Not Allowed', { status: 405 })
 
     // Statische Dateien; unbekannte Seiten-Pfade bekommen die App (Client-Routing)
-    const path = url.pathname.slice(BASE_PATH.length)
+    const path = url.pathname
     const asset = ASSETS[path === '/' ? '/index.html' : path]
     if (asset) return serveAsset(asset)
     if (path.startsWith('/assets/') || extensionOf(path)) return new Response('Not Found', { status: 404 })
