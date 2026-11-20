@@ -73,7 +73,8 @@
     @apply bg-background text-foreground;
     }
   html {
-    @apply font-sans antialiased;
+    /* Vollbild: Hintergrund bis unter Statusleiste und Home-Leiste */
+    @apply bg-background font-sans antialiased;
     font-feature-settings: "ss01", "tnum";
     }
 }
