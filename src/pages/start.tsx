@@ -59,7 +59,7 @@ export function StartPage() {
           <p className="mb-5 font-mono text-xl">
             <span>fall dass </span>
             <span className="relative">
-              <span className="absolute top-[0.2em] bottom-[0.15em] -left-px w-[2px] animate-pulse bg-navy" />f
+              <span className="absolute top-[0.2em] bottom-[0.15em] -left-px w-[2px] animate-pulse bg-primary" />f
             </span>
             <span className="text-muted-foreground/60">lach saal</span>
           </p>
@@ -75,7 +75,7 @@ export function StartPage() {
               <h2 className="text-lg font-semibold">{f.title}</h2>
               <p className="text-sm leading-relaxed text-muted-foreground">{f.text}</p>
               {f.to ? (
-                <Link to={f.to} className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-navy hover:underline">
+                <Link to={f.to} className="mt-auto inline-flex items-center gap-1 text-sm font-semibold text-foreground underline-offset-4 hover:underline">
                   {f.link} <ArrowRight className="size-4" />
                 </Link>
               ) : (

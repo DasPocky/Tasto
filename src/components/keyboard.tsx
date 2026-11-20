@@ -36,7 +36,7 @@ export function Keyboard({ nextChar, pressedCode, enabledChars, className }: Pro
                     'relative flex h-10 items-center justify-center overflow-hidden rounded-[5px] border bg-background text-[13px] text-foreground/80 transition-colors duration-75 sm:h-11',
                     !key.base && !key.finger && 'bg-muted text-muted-foreground',
                     disabled && 'text-muted-foreground/40',
-                    isTarget && 'border-navy bg-navy text-primary-foreground',
+                    isTarget && 'border-primary bg-primary text-primary-foreground',
                     pressedCode === key.code && !isTarget && 'bg-accent',
                   )}
                   style={{ flex: `${key.width ?? 1} 1 0` }}

@@ -53,7 +53,7 @@ export function TypingText({ state, lines = 3, className }: Props) {
               <span
                 className={cn(
                   'absolute top-[0.25em] bottom-[0.2em] -left-px w-[2px] animate-pulse',
-                  state.errors.has(i) ? 'bg-destructive' : 'bg-navy',
+                  state.errors.has(i) ? 'bg-destructive' : 'bg-primary',
                 )}
               />
             )}

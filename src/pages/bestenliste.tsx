@@ -46,7 +46,7 @@ export function BestenlistePage() {
               onClick={() => setSort(s.value)}
               className={cn(
                 '-mb-px border-b-2 border-transparent pb-2 text-sm text-muted-foreground transition-colors hover:text-foreground',
-                sort === s.value && 'border-navy text-foreground',
+                sort === s.value && 'border-primary text-foreground',
               )}
             >
               {s.label}
