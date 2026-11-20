@@ -1,10 +1,10 @@
-// Packt den Vite-Build (dist/tasto) als Modul in den Worker, damit kein separater
+// Packt den Vite-Build (dist/client) als Modul in den Worker, damit kein separater
 // Asset-Upload nötig ist. Ergebnis: worker/assets.gen.ts (nicht eingecheckt).
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs'
 import { extname, join, relative } from 'node:path'
 
 const ROOT = new URL('..', import.meta.url).pathname
-const DIST = join(ROOT, 'dist/tasto')
+const DIST = join(ROOT, 'dist/client')
 const OUT = join(ROOT, 'worker/assets.gen.ts')
 
 const TYPES = {
